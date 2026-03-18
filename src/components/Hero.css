@@ -1,0 +1,306 @@
+/* ===== HERO ===== */
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-badge { margin-bottom: 0; }
+
+.hero-heading-wrap {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: clamp(4rem, 7vw, 7rem);
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 680px;
+  margin-bottom: 3rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+/* ===== PIPELINE WRAPPER ===== */
+.hero-pipeline-wrapper {
+  width: 100%;
+  max-width: 1150px;
+  background: rgba(8, 8, 12, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 24px;
+  padding: 2.5rem 2.5rem 1.75rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle top-edge gradient highlight */
+.hero-pipeline-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,107,74,0.4) 20%, rgba(0,212,255,0.4) 80%, transparent);
+}
+
+/* ===== PIPELINE ROW ===== */
+.pipeline-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+/* ===== REALISTIC PIPELINE NODE ===== */
+.pipeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 0.85rem;
+  border-radius: 18px;
+  flex-shrink: 0;
+  min-width: 140px;
+  position: relative;
+  overflow: hidden;
+  
+  /* Deep glossy texture */
+  background: linear-gradient(145deg, rgba(30,30,40,0.85) 0%, rgba(10,10,15,0.95) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  
+  /* Complex inner and outer shadows for 3D realism */
+  box-shadow: 
+    0 24px 50px rgba(0,0,0,0.8),         /* outer depth */
+    inset 0 1px 1px rgba(255,255,255,0.15), /* top edge highlight */
+    inset 0 -1px 1px rgba(0,0,0,0.6);       /* bottom edge shadow */
+    
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.pipeline-node:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Internal glowing hardware edge indicator */
+.pipeline-node::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  z-index: 5;
+  border-radius: 18px 18px 0 0;
+}
+.pipeline-node.node-warm::before {
+  background: linear-gradient(90deg, transparent, #ff6b4a, transparent);
+  box-shadow: 0 0 15px #ff6b4a;
+}
+.pipeline-node.node-cool::before {
+  background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+  box-shadow: 0 0 15px #00d4ff;
+}
+.pipeline-node.node-done::before {
+  background: linear-gradient(90deg, transparent, #10b981, transparent);
+  box-shadow: 0 0 15px #10b981;
+}
+
+/* Glow on hover */
+.pipeline-node.node-warm:hover { box-shadow: 0 24px 50px rgba(0,0,0,0.8), 0 0 40px rgba(255,107,74,0.15), inset 0 1px 1px rgba(255,107,74,0.3); }
+.pipeline-node.node-cool:hover { box-shadow: 0 24px 50px rgba(0,0,0,0.8), 0 0 40px rgba(0,212,255,0.15), inset 0 1px 1px rgba(0,212,255,0.3); }
+.pipeline-node.node-done:hover { box-shadow: 0 24px 50px rgba(0,0,0,0.8), 0 0 40px rgba(16,185,129,0.15), inset 0 1px 1px rgba(16,185,129,0.3); }
+
+/* Recessed ring for the icon */
+.node-icon-ring {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  
+  /* metallic housing */
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.01) 100%);
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.4), inset 0 -1px 2px rgba(255,255,255,0.05);
+}
+
+.node-icon {
+  font-size: 1.4rem;
+  color: #fff;
+  z-index: 2;
+  position: relative;
+}
+
+.node-warm .node-icon { color: #ff6b4a; filter: drop-shadow(0 0 10px #ff6b4a); }
+.node-cool .node-icon { color: #00d4ff; filter: drop-shadow(0 0 10px #00d4ff); }
+.node-done .node-icon { color: #10b981; filter: drop-shadow(0 0 10px #10b981); }
+
+.node-ring-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  opacity: 0.15;
+  animation: ring-expand 2.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+.node-warm .node-ring-pulse { border-color: #ff6b4a; }
+.node-cool .node-ring-pulse { border-color: #00d4ff; }
+.node-done .node-ring-pulse { border-color: #10b981; }
+
+@keyframes ring-expand {
+  0% { transform: scale(0.8); opacity: 0.5; border-width: 2px; }
+  100% { transform: scale(1.8); opacity: 0; border-width: 0.5px; }
+}
+
+.node-info { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 0.35rem; 
+  align-items: center;
+  width: 100%;
+}
+
+/* Recessed digital screen look */
+.node-top-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  padding: 0.5rem 0.25rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.node-label {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #e4e4e7;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* Glowing LED Badge */
+.node-badge {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid currentColor;
+}
+.node-badge-live       { color: #ff6b4a; background: rgba(255,107,74,0.05); box-shadow: 0 0 8px rgba(255,107,74,0.4); }
+.node-badge-processing { color: #f59e0b; background: rgba(245,158,11,0.05); box-shadow: 0 0 8px rgba(245,158,11,0.4); }
+.node-badge-active     { color: #00d4ff; background: rgba(0,212,255,0.05);  box-shadow: 0 0 8px rgba(0,212,255,0.4); }
+.node-badge-streaming  { color: #a78bfa; background: rgba(167,139,250,0.05); box-shadow: 0 0 8px rgba(167,139,250,0.4); }
+.node-badge-done       { color: #10b981; background: rgba(16,185,129,0.05); box-shadow: 0 0 8px rgba(16,185,129,0.4); }
+
+.node-sub {
+  font-size: 0.72rem;
+  color: #71717a;
+  margin-top: 0.25rem;
+}
+
+/* ===== CONNECTOR ===== */
+.pipeline-connector {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 30px;
+}
+
+.connector-svg {
+  width: 100%;
+  height: 8px;
+  overflow: visible;
+}
+
+.connector-diamond {
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg);
+  border-radius: 1px;
+  flex-shrink: 0;
+  margin-left: -3px;
+}
+
+/* ===== PIPELINE CAPTION ===== */
+.pipeline-caption {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #3f3f46;
+  margin-top: 1.5rem;
+  letter-spacing: 0.04em;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-title { font-size: 3.5rem; }
+  .pipeline-row { flex-wrap: wrap; gap: 1rem; justify-content: center; }
+  .pipeline-connector { display: none; }
+}
+
+@media (max-width: 640px) {
+  .hero-actions { flex-direction: column; width: 100%; }
+  .hero-title { font-size: 2.8rem; }
+}
+
+/* ===== TEXT REVEAL MASKS ===== */
+.reveal-line {
+  display: inline-flex;
+  gap: 0.3em;
+  line-height: 1.1;
+}
+
+.reveal-word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.1em; /* prevents cropping of descenders */
+}
+
+.reveal-word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+

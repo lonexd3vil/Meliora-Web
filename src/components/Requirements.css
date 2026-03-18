@@ -1,0 +1,53 @@
+.requirements-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.req-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.req-card {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.4rem;
+  min-height: 280px;
+  justify-content: center;
+}
+
+.req-card-icon {
+  width: 88px;
+  height: 88px;
+  color: var(--accent-primary);
+  filter: drop-shadow(0 0 12px var(--accent-glow));
+  margin-bottom: 1.5rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.req-card:nth-child(2) .req-card-icon { animation-delay: 1s; }
+.req-card:nth-child(3) .req-card-icon { animation-delay: 2s; }
+
+.req-svg { width: 100%; height: 100%; }
+
+.req-card h3 {
+  font-size: 1.4rem;
+  color: #d4d4d8;
+  margin-bottom: 0.25rem;
+}
+
+.req-card p {
+  color: #52525b;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .req-cards { grid-template-columns: 1fr; }
+  .req-card { min-height: auto; padding: 2rem; }
+}
