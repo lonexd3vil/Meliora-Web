@@ -48,33 +48,33 @@ body {
 .atmosphere-flare {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(180px);
   opacity: 0;
-  animation: flare-pulse 8s ease-in-out infinite;
+  animation: flare-pulse 10s ease-in-out infinite;
 }
 
 .atmosphere-flare.warm {
-  width: 900px;
-  height: 900px;
-  background: radial-gradient(circle, rgba(255, 107, 74, 0.18) 0%, transparent 70%);
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(circle, rgba(255, 107, 74, 0.22) 0%, transparent 70%);
   top: -20%;
   left: -20%;
   animation-delay: 0s;
 }
 
 .atmosphere-flare.cool {
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
   bottom: -30%;
   right: -15%;
   animation-delay: 4s;
 }
 
 .atmosphere-flare.mid {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.12) 0%, transparent 70%);
   top: 40%;
   left: 50%;
   transform: translateX(-50%);
@@ -87,8 +87,8 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 50px 50px;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
 }
@@ -282,7 +282,7 @@ a {
 
 /* ===== TEXT GRADIENT ACCENT ===== */
 .text-accent-gradient {
-  background: linear-gradient(135deg, var(--accent-primary) 0%, #4facfe 100%);
+  background: linear-gradient(135deg, #fff 0%, #bae6fd 70%, #7dd3fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
