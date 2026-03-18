@@ -33,8 +33,7 @@ const Pricing = () => {
 
   return (
     <section className="section pricing-section" id="pricing" ref={sectionRef}>
-      <div className="section-fade-top" />
-      <div className="section-fade-bottom" />
+
 
       <div className="container">
         <motion.div className="section-header" style={{ y: titleY, opacity: titleOpacity }}>

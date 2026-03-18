@@ -62,7 +62,7 @@ const Hero = () => {
   const headingY = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const headingOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
   const badgeY = useTransform(scrollYProgress, [0, 1], [0, -280]);
-  
+
   // New heavy scale parallax: pipeline and container scale down as you scroll
   const sectionScale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
   const pipelineY = useTransform(scrollYProgress, [0, 1], [0, -100]);
@@ -106,7 +106,6 @@ const Hero = () => {
   return (
     <section className="hero-section" ref={sectionRef}>
       {/* Section fade top/bottom */}
-      <div className="section-fade-bottom" />
 
       <motion.div className="container hero-container" style={{ scale: sectionScale }}>
         {/* Badge */}
