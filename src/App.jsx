@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Requirements from './components/Requirements';
-import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 
 /* Global fixed atmospheric background — persists through all scroll */
@@ -27,7 +26,6 @@ function App() {
         <Hero />
         <Features />
         <Requirements />
-        <Pricing />
       </main>
       <Footer />
     </>

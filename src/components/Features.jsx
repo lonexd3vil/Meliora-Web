@@ -85,8 +85,7 @@ const features = [
   { svg: <ShieldSVG />, title: 'Completely Offline', desc: 'Your voice never leaves your machine. Every model runs locally.', tag: 'Privacy', span: 'col-span-4' },
   { svg: <BoltSVG />, title: 'Sub-Second Response', desc: 'Pipelined architecture processes speech and reasoning simultaneously.', tag: 'Performance', span: 'col-span-4' },
   { svg: <SpeakerSVG />, title: 'Natural Voice Output', desc: 'Sentence-level pipelined speech synthesis for fluid, human-like audio.', tag: 'Voice Synthesis', span: 'col-span-4' },
-  { svg: <KeySVG />, title: 'You Own Everything', desc: 'One purchase, lifetime access. No subscriptions, no telemetry, no cloud keys.', tag: 'Ownership', span: 'col-span-5' },
-  { svg: <WaveformSVG />, title: 'Built on Open Foundations', desc: 'Open-source model architectures optimized for Apple Silicon unified memory.', tag: 'Open Ecosystem', span: 'col-span-7' },
+  { svg: <WaveformSVG />, title: 'Built on Open Foundations', desc: 'Open-source model architectures optimized for Apple Silicon unified memory.', tag: 'Open Ecosystem', span: 'col-span-12' },
 ];
 
 const Features = () => {

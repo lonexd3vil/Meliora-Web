@@ -28,16 +28,10 @@ const Navbar = () => {
         <div className="nav-links">
           <a href="#features" className="nav-link">Stack</a>
           <a href="#requires" className="nav-link">Requirements</a>
-          <a href="#pricing" className="nav-link">Pricing</a>
         </div>
 
         <div className="nav-actions">
-          <button
-            className="btn btn-primary nav-btn"
-            onClick={() => document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' })}
-          >
-            Get Access
-          </button>
+          {/* Actions removed as per request */}
         </div>
       </div>
     </motion.nav>

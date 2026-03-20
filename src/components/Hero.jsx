@@ -157,12 +157,7 @@ const Hero = () => {
             animate="visible"
             custom={8}
           >
-            <button className="btn btn-primary" onClick={() => document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' })}>
-              Get Lifetime Access
-            </button>
-            <button className="btn btn-secondary" onClick={() => document.getElementById('features').scrollIntoView({ behavior: 'smooth' })}>
-              Explore <FiArrowRight style={{ marginLeft: 8 }} />
-            </button>
+            <div className="badge badge-alpha">Alpha Release — Coming Soon</div>
           </motion.div>
         </motion.div>
 
